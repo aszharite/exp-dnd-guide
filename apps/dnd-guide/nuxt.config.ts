@@ -1,5 +1,6 @@
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { defineNuxtConfig } from 'nuxt/config';
+import { join } from 'node:path';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -21,6 +22,14 @@ export default defineNuxtConfig({
     autoImport: false,
   },
 
+  postcss: {
+    plugins: {
+      tailwindcss: {
+        config: join(__dirname, 'tailwind.config.js'),
+      },
+      autoprefixer: {},
+    },
+  },
   css: ['~/assets/css/styles.scss'],
 
   vite: {
