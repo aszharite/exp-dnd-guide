@@ -1,3 +1,3 @@
 <template>
-  <NxWelcome title="dnd-guide" />
+  <NuxtPage></NuxtPage>
 </template>
